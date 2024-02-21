@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Symble Dictionary",
+    "action": {
+        "default_popup": "index.html",
+	"default_title": "Symble Dictionary",
+ 	"default_icon": {
+		"800": "fav.png"
+	}
+    },
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://symble.app*"], 
+			"js": ["content.js"]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"storage",
+		"scripting"
+	],
+	"host_permissions": [
+		"*://symble.app*"
+	]
+}
